@@ -1,0 +1,841 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Calculate_Expenditure" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1356,9248" sap2010:WorkflowViewState.IdRef="Calculate_Expenditure_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="30">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Calculate_Expenditure" sap:VirtualizedContainerService.HintSize="1366,9183" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="originalFilePath" />
+      <Variable x:TypeArguments="x:String" Name="FileName" />
+      <Variable x:TypeArguments="x:String" Name="newFileLocation" />
+      <Variable x:TypeArguments="x:String" Name="newFileLocationnewFileLocation" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="conValue" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="1324,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[originalFilePath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">C:\Users\alfred\Documents\RACE-SCT-11\20220317 RPA\Project\FirstProcess\input\Demo.xlsx</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="1324,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[FileName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[originalFilePath.split("\"c).Last]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="1324,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[newFileLocation]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["output\"+FileName.split("."c).First+"_"+Now.TOString("yyMMdd_HHmm")+"."+FileName.Split("."c).Last]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1324,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[newFileLocation]" />
+    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[newFileLocation]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="1324,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="False" Path="[originalFilePath]" />
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1324,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Xe-Conversion.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_SGDtoEUR">[conValue]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1324,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[conValue]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1324,8240" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[newFileLocation]">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1290,8131" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="actualColumns" />
+              <Variable x:TypeArguments="x:Int32" Name="actualMonth" />
+              <Variable x:TypeArguments="sd:DataTable" Name="dt_Actuals" />
+              <Variable x:TypeArguments="s:String[]" Name="varianceColumns" />
+              <Variable x:TypeArguments="x:Int32" Name="varMonth" />
+              <Variable x:TypeArguments="x:Int32" Name="countMonth" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="sumVarianceExp3" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="sumVarianceExp2" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="sumVarianceExp1" />
+              <Variable x:TypeArguments="sd:DataTable" Name="dt_Full" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="sumBudgtedExp1" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="sumBudgtedExp2" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="sumBudgtedExp3" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="sumActualExp1" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="sumActualExp2" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="sumActualExp3" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelReadRange AddHeaders="False" DataTable="[dt_actuals]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="1248,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="C3:N5" SheetName="Actual Exp">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelReadRange>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[actualColumns]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"D", "F", "H", "J","L", "N", "P", "R","T","V","X","Z"}]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[actualMonth]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1248,51" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[actualColumns]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,1127" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="ui:GenericValue" Name="exp1" />
+                      <Variable x:TypeArguments="ui:GenericValue" Name="exp2" />
+                      <Variable x:TypeArguments="ui:GenericValue" Name="exp3" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExcelSelectRange sap2010:Annotation.AnnotationText="Starts with &quot;D&quot;" DisplayName="Select Range" sap:VirtualizedContainerService.HintSize="262,83" sap2010:WorkflowViewState.IdRef="ExcelSelectRange_1" Range="[item + &quot;1&quot;]" SheetName="Budg Exp">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ExcelSelectRange>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="ui:GenericValue">[exp1]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="ui:GenericValue">[CDbl(dt_Actuals.Rows(0)(actualMonth))*conValue]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="ui:GenericValue">[exp2]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="ui:GenericValue">[CDbl(dt_Actuals.Rows(1)(actualMonth))*conValue]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="ui:GenericValue">[exp3]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="ui:GenericValue">[CDbl(dt_Actuals.Rows(2)(actualMonth))*conValue]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:FormatValue DisplayName="Format Value" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="FormatValue_1" Value="[exp1]">
+                      <ui:FormatValue.Format>
+                        <ui:GeneralNumberFormatProvider DecimalDigits="2" DecimalSeparator="." GroupSeparator="," />
+                      </ui:FormatValue.Format>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:FormatValue>
+                    <ui:FormatValue DisplayName="Format Value" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="FormatValue_2" Value="[exp2]">
+                      <ui:FormatValue.Format>
+                        <ui:GeneralNumberFormatProvider DecimalDigits="2" DecimalSeparator="." GroupSeparator="," />
+                      </ui:FormatValue.Format>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:FormatValue>
+                    <ui:FormatValue DisplayName="Format Value" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="FormatValue_3" Value="[exp3]">
+                      <ui:FormatValue.Format>
+                        <ui:GeneralNumberFormatProvider DecimalDigits="2" DecimalSeparator="." GroupSeparator="," />
+                      </ui:FormatValue.Format>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:FormatValue>
+                    <ui:ExcelWriteCell Cell="[item+&quot;5&quot;]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Budg Exp" Text="[exp1]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ExcelWriteCell>
+                    <ui:ExcelWriteCell Cell="[item+&quot;6&quot;]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Budg Exp" Text="[exp2]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ExcelWriteCell>
+                    <ui:ExcelWriteCell Cell="[item+&quot;7&quot;]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Budg Exp" Text="[exp3]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ExcelWriteCell>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[actualMonth]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[actualMonth+1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[varianceColumns]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"E", "G","I","K","M","O","Q","S","U","W","Y","AA"}]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[varMonth]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">11</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InterruptibleWhile Condition="[varMonth&gt;=0]" DisplayName="While varMonth &gt;= 11 (insert variance from Dec to Jan)" sap:VirtualizedContainerService.HintSize="1248,1777" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1612" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="s:String[]" Name="RefMonth" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelSelectRange DisplayName="Select Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelSelectRange_2" Range="[varianceColumns(varMonth)+&quot;1&quot;]" SheetName="Budg Exp" />
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  Insert'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2eda8a0-9eff-43c0-8335-58debe163318" InformativeScreenshot="51ce4a55e55160b4e63eb6e9a8cc4ae9" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Demo????????????.xlsx - Excel' /&gt;&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Home' /&gt;&lt;uia cls='NetUIChunk' name='Cells' /&gt;&lt;uia automationid='InsertCellstMenu_Dropdown' cls='NetUIRibbonButton' name='More Options' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'menu item'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c3d53aa5-9652-421c-8d41-7fba1d814326" InformativeScreenshot="196c642e3413834e18edec3a2bb10717" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Demo????????????.xlsx - Excel' /&gt;&lt;wnd cls='MsoWorkPane' title='Ribbon' /&gt;&lt;wnd aaname='Ribbon' cls='NetUIHWND' /&gt;&lt;ctrl name='Insert Sheet Columns' role='menu item' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="varianceColumns(varMonth) + &quot;2&quot;" Cell="[varianceColumns(varMonth) + &quot;2&quot;]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Budg Exp" Text="Variance">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ExcelWriteCell>
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="s:String[]">[RefMonth]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="s:String[]">[{"Jan", "Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"}]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="varianceColumns(varMonth) + &quot;2&quot;" Cell="[varianceColumns(varMonth) + &quot;4&quot;]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Budg Exp" Text="[RefMonth(varMonth)]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ExcelWriteCell>
+                  <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="varianceColumns(varMonth) + &quot;5&quot;&#xA;&quot;=INDIRECT(ADDRESS(ROW(),COLUMN()-2)) - INDIRECT(ADDRESS(ROW(), COLUMN()-1))&quot;" Cell="[varianceColumns(varMonth) + &quot;5&quot;]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,153" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Budg Exp" Text="=INDIRECT(ADDRESS(ROW(),COLUMN()-2)) - INDIRECT(ADDRESS(ROW(), COLUMN()-1))">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ExcelWriteCell>
+                  <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="varianceColumns(varMonth) + &quot;6&quot;&#xA;&quot;=INDIRECT(ADDRESS(ROW(),COLUMN()-2)) - INDIRECT(ADDRESS(ROW(), COLUMN()-1))&quot;" Cell="[varianceColumns(varMonth) + &quot;6&quot;]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,153" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Budg Exp" Text="=INDIRECT(ADDRESS(ROW(),COLUMN()-2)) - INDIRECT(ADDRESS(ROW(), COLUMN()-1))">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ExcelWriteCell>
+                  <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="varianceColumns(varMonth) + &quot;7&quot;&#xA;&quot;=INDIRECT(ADDRESS(ROW(),COLUMN()-2)) - INDIRECT(ADDRESS(ROW(), COLUMN()-1))&quot;" Cell="[varianceColumns(varMonth) + &quot;7&quot;]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,153" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Budg Exp" Text="=INDIRECT(ADDRESS(ROW(),COLUMN()-2)) - INDIRECT(ADDRESS(ROW(), COLUMN()-1))">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ExcelWriteCell>
+                  <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="varianceColumns(varMonth) + &quot;7&quot;&#xA;&quot;=SUM(&quot; +varianceColumns(varMonth) +&quot;5:&quot; + varianceColumns(varMonth) +&quot;7)&quot;" Cell="[varianceColumns(varMonth) + &quot;8&quot;]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,144" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Budg Exp" Text="[&quot;=SUM(&quot; +varianceColumns(varMonth) +&quot;5:&quot; + varianceColumns(varMonth) +&quot;7)&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ExcelWriteCell>
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[varMonth]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[varMonth-1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InterruptibleWhile>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[countMonth]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ExcelReadRange AddHeaders="False" DataTable="[dt_Full]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="1248,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" Range="C5:AL7" SheetName="Budg Exp">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelReadRange>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[sumBudgtedExp1]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[sumBudgtedExp2]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[sumBudgtedExp3]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[sumActualExp1]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[sumActualExp2]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[sumActualExp3]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[sumVarianceExp1]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[sumVarianceExp2]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="1248,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:GenericValue">[sumVarianceExp3]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:GenericValue">[0]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InterruptibleWhile Condition="[countMonth&lt;=35]" DisplayName="While" sap:VirtualizedContainerService.HintSize="1248,1299" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+              <ui:InterruptibleWhile.Body>
+                <Sequence sap:VirtualizedContainerService.HintSize="1212,1134" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1170,942" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[countMonth=0 or countMonth=3 or countMonth=6 or countMonth=9 or countMonth=12 or countMonth=15 or countMonth=18 or countMonth=21 or countMonth=24 or countMonth=27 or countMonth=30 or countMonth=33]" sap:VirtualizedContainerService.HintSize="1128,850" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="ui:GenericValue">[sumBudgtedExp1]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="ui:GenericValue">[CdbL(dt_Full.Rows(0)(countMonth))+sumBudgtedExp1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="ui:GenericValue">[sumBudgtedExp2]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="ui:GenericValue">[CdbL(dt_Full.Rows(1)(countMonth))+sumBudgtedExp2]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="ui:GenericValue">[sumBudgtedExp3]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="ui:GenericValue">[CdbL(dt_Full.Rows(2)(countMonth))+sumBudgtedExp3]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="779,693" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[countMonth=1 or countMonth=4 or countMonth=7 or countMonth=10 or countMonth=13 or countMonth=16 or countMonth=19 or countMonth=22 or countMonth=25 or countMonth=28 or countMonth=31 or countMonth=34]" sap:VirtualizedContainerService.HintSize="737,601" sap2010:WorkflowViewState.IdRef="If_2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="346,444" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="ui:GenericValue">[sumActualExp1]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="ui:GenericValue">[CdbL(dt_Full.Rows(0)(countMonth))+sumActualExp1]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="ui:GenericValue">[sumActualExp2]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="ui:GenericValue">[CdbL(dt_Full.Rows(1)(countMonth))+sumActualExp2]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="ui:GenericValue">[sumActualExp3]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="ui:GenericValue">[CdbL(dt_Full.Rows(2)(countMonth))+sumActualExp3]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="346,444" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="ui:GenericValue">[sumVarianceExp1]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="ui:GenericValue">[CdbL(dt_Full.Rows(0)(countMonth))+sumVarianceExp1]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_32">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="ui:GenericValue">[sumVarianceExp2]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="ui:GenericValue">[CdbL(dt_Full.Rows(1)(countMonth))+sumVarianceExp2]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="ui:GenericValue">[sumVarianceExp3]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="ui:GenericValue">[CdbL(dt_Full.Rows(2)(countMonth))+sumVarianceExp3]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                  <Assign sap:VirtualizedContainerService.HintSize="1170,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[countMonth]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[countMonth+1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InterruptibleWhile>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AM2&quot;&#xA;&quot;=Budgted&quot;" Cell="AM2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_17" SheetName="Budg Exp" Text="Budgted">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AM4&quot;&#xA;&quot;Total&quot;" Cell="AM4" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_18" SheetName="Budg Exp" Text="Total">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AM5&quot;&#xA;&quot;=&quot;+sumBudgtedExp1" Cell="AM5" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_19" SheetName="Budg Exp" Text="[&quot;=&quot;+sumBudgtedExp1]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AM6&quot;&#xA;&quot;=&quot;+sumBudgtedExp2" Cell="AM6" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_20" SheetName="Budg Exp" Text="[&quot;=&quot;+sumBudgtedExp2]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AM7&quot;&#xA;&quot;=&quot;+sumBudgtedExp3" Cell="AM7" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_21" SheetName="Budg Exp" Text="[&quot;=&quot;+sumBudgtedExp3]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;=SUM(AM&quot; +&quot;5:&quot; + &quot;AM7)&quot;" Cell="AM8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,118" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_29" SheetName="Budg Exp" Text="[&quot;=SUM(AM&quot; +&quot;5:&quot; + &quot;AM7)&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AN2&quot;&#xA;&quot;Budgted&quot;" Cell="AN2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_22" SheetName="Budg Exp" Text="Actual">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AN4&quot;&#xA;&quot;Total&quot;" Cell="AN4" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_23" SheetName="Budg Exp" Text="Total">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AN5&quot;&#xA;&quot;=&quot;+sumActualExp1" Cell="AN5" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_24" SheetName="Budg Exp" Text="[&quot;=&quot;+sumActualExp1]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AN6&quot;&#xA;&quot;=&quot;+sumActualExp2" Cell="AN6" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_25" SheetName="Budg Exp" Text="[&quot;=&quot;+sumActualExp2]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AN7&quot;&#xA;&quot;=&quot;+sumActualExp3" Cell="AN7" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_26" SheetName="Budg Exp" Text="[&quot;=&quot;+sumActualExp3]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;=SUM(AN&quot; +&quot;5:&quot; + &quot;AN7)&quot;" Cell="AN8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,118" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_30" SheetName="Budg Exp" Text="[&quot;=SUM(AN&quot; +&quot;5:&quot; + &quot;AN7)&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AO2&quot;&#xA;&quot;=&quot;+sumVarianceExp1" Cell="AO2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_27" SheetName="Budg Exp" Text="Variance">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AO4&quot;&#xA;&quot;=&quot;+sumVarianceExp1" Cell="AO4" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_28" SheetName="Budg Exp" Text="Total">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AO5&quot;&#xA;&quot;=&quot;+sumVarianceExp1" Cell="AO5" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="Budg Exp" Text="[&quot;=&quot;+sumVarianceExp1]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AO6&quot;&#xA;&quot;=&quot;+sumVarianceExp2" Cell="AO6" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="Budg Exp" Text="[&quot;=&quot;+sumVarianceExp2]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;AO7&quot;&#xA;&quot;=&quot;+sumVarianceExp3" Cell="AO7" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,129" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_16" SheetName="Budg Exp" Text="[&quot;=&quot;+sumVarianceExp3]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelWriteCell sap2010:Annotation.AnnotationText="&quot;=SUM(AO&quot; +&quot;5:&quot; + &quot;AO7)&quot;" Cell="AO8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1248,118" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_31" SheetName="Budg Exp" Text="[&quot;=SUM(AO&quot; +&quot;5:&quot; + &quot;AO7)&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteCell>
+            <ui:ExcelSetRangeColor Color="[Color.Yellow]" DisplayName="Set Range Color" sap:VirtualizedContainerService.HintSize="1248,185" sap2010:WorkflowViewState.IdRef="ExcelSetRangeColor_1" Range="AO8" SheetName="Budg Exp" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+    </ui:ExcelApplicationScope>
+  </Sequence>
+</Activity>

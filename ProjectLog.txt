@@ -1,0 +1,2 @@
+04/04/2022 09:09:01 Logged into UiPath ACME successfully.
+04/04/2022 09:09:07 Work Item 1 downloaded into the local folder.
